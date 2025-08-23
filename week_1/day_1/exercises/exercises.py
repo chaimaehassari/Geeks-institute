@@ -3,75 +3,70 @@ print("Hello World")
 # ------ Exercise 2
 print((99 ** 3) * 8)
 # ------ Exercise 3
-mon_prenom = "Chaimae"  
-nom_utilisateur = input("Comment t'appelles-tu ? ")
-if nom_utilisateur== mon_prenom:
-    print(" On a le même nom!")
+user_name = input("What's your name? ")
+if user_name == "Nezha":
+    print("Hi Nezha! We have the same name!")
 else:
-    print(f"Enchanté de te rencontrer, {nom_utilisateur}  Mais mon nom est plus cool ")
-   
-# ------ Exercise 4
-hauteur = int(input("Entrez votre hauteur en cm : "))
-if hauteur > 145:
-    print("Vous êtes assez grand pour faire le grand huit ! ")
-else:
-    print("Désolé, il faut que vous grandissiez encore un peu pour faire le tour. ")
-# ------ Exercise 5
-my_fav_numbers = {7, 13, 21, 42, 88}
-print("Mes numéros préférés :", my_fav_numbers)
-my_fav_numbers.add(99)
-my_fav_numbers.add(3)
-print("Après l'ajout de deux nombres :", my_fav_numbers)
-my_fav_numbers.remove(3)
-print("Après la suppression du nombre 3 :", my_fav_numbers)
-friend_fav_numbers = {5, 10, 15, 20, 25, 7}  
-print("Numéros préférés de l'ami :", friend_fav_numbers)
-our_fav_numbers = my_fav_numbers.union(friend_fav_numbers)
-print("numéros préférés combinés :", our_fav_numbers)
-# ------ Exercise 6
+    print("Nice to meet you. I'm happy to see you " + user_name + "!")
+    
+# ------ Exercise 4  
 
-my_tuple = (1, 2, 3)
-print("Tuple initial :", my_tuple)
-my_tuple = my_tuple + (4, 5)  
-print("Tuple après ajout :", my_tuple)
+user_height = int(input("What's your height in centimeters?"))
+if user_height >= 145:
+    print("You are tall enough! Enjoy the ride!")
+else:
+    print("You are not tall enough to ride.")
+    
+# ------ Exercise 5
+my_fav_numbers = {7, 18, 1, 4, 50}
+my_fav_numbers.add(90)
+my_fav_numbers.add(78)
+my_fav_numbers.remove(4)
+print("My favorite numbers are:", my_fav_numbers)
+friend_fav_numbers = {3, 68, 8, 5, 49}
+print("My friend's favorite numbers are:", friend_fav_numbers)
+our_fav_numbers = (my_fav_numbers).union(friend_fav_numbers)
+print("Our favorite numbers are:", our_fav_numbers)
+
+# ------ Exercise 6
+#Given a tuple which value is integers, is it possible to add more integers to the tuple?
+#No, tuples are immutable in Python. Once a tuple is created, cannot add or remove elements from it.
 
 # ------ Exercise 7
 basket = ["Banana", "Apples", "Oranges", "Blueberries"]
-print("Liste initiale :", basket)
 basket.remove("Banana")
-print("Après suppression de Banana :", basket)
 basket.remove("Blueberries")
-print("Après suppression de Blueberries :", basket)
 basket.append("Kiwi")
-print("Après ajout de Kiwi :", basket)
 basket.insert(0, "Apples")
-print("Après ajout de Apples au début :", basket)
-apple_count = basket.count("Apples")
-print("Nombre de Apples dans le panier :", apple_count)
+print(basket)
+print("Number of Apples:", basket.count("Apples"))
 basket.clear()
-print("Panier après vidage :", basket)
+print(basket)
 
 # ------ Exercise 8
-
 sandwich_orders = [
-    "Sandwich au thon",
-    "Sandwich pastrami",
-    "Sandwich à l'avocat",
-    "Sandwich pastrami",
-    "Sandwich aux œufs",
-    "Sandwich au poulet",
-    "Sandwich pastrami"
+    "Tuna sandwich",
+    "Pastrami sandwich",
+    "Avocado sandwich",
+    "Pastrami sandwich",
+    "Egg sandwich",
+    "Chicken sandwich",
+    "Pastrami sandwich"
 ]
 
-while "Sandwich pastrami" in sandwich_orders:
-    sandwich_orders.remove("Sandwich pastrami")
+# 1. Remove all occurrences of "Pastrami sandwich"
+while "Pastrami sandwich" in sandwich_orders:
+    sandwich_orders.remove("Pastrami sandwich")
+# 2. We need to prepare the orders of the clients:
+print("We need to prepare the following sandwiches:")
+for sandwich in sandwich_orders:
+    print(f"- {sandwich}")
 
-print("Commandes restantes :", sandwich_orders)
-
+# 3. Create an empty list for finished sandwiches
 finished_sandwiches = []
 
+#4. One by one, remove each sandwich from the sandwich_orders while adding them to the finished_sandwiches list.
 while sandwich_orders:
-    sandwich = sandwich_orders.pop(0)  
-
-for sandwich in finished_sandwiches:
-    print(f"J'ai préparé votre {sandwich.lower()}")
+    current_sandwich = sandwich_orders.pop(0)  # remove first sandwich
+    finished_sandwiches.append(current_sandwich)  
+    print(f"I made your {current_sandwich.lower()}")  # print message
