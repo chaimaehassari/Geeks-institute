@@ -13,6 +13,7 @@ class Game:
         return user_input
     def get_computer_item(self):
         choices = ["rock", "paper", "scissors"]
+        # random en Python = un module pour travailler
         return random.choice(choices)
     def get_game_result(self, user_item, computer_item):
         if user_item == computer_item:
