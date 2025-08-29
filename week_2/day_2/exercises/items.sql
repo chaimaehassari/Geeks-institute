@@ -11,7 +11,7 @@ CREATE TABLE CUSTOMERS(
     birth_date DATE
 );
 select * from items
-ORDER BYprice ASC;
+ORDER BY price ASC;
 
 SELECT * FROM items
 WHERE price >= 80
