@@ -1,46 +1,62 @@
+// ===============================
 // Exercise 1 : Is_Blank
+// ===============================
 function isBlank(str) {
-    if(str === "") 
-        return true;
-    return false;
-}
-// Exercise 2 : Abbrev_Name
-function abbrevName(firstName,lastName) {
-    
-    return firstName + "" +lastName.charAt(0).toUpperCase() + ".";
+    return str === "";
 }
 
+console.log(isBlank(''));     
+console.log(isBlank('abc'));  
+
+
+// ===============================
+// Exercise 2 : Abbrev_Name
+// ===============================
+function abbrevName(str) {
+    let parts = str.split(" ");
+    return parts[0] + " " + parts[1].charAt(0).toUpperCase() + ".";
+}
+
+console.log(abbrevName("Robin Singh")); 
+
+
+// ===============================
 // Exercise 3 : SwapCase
+// ===============================
 function swapCase(str) {
     let swapped = '';
-    for(let i = 0; i < str.length; i++) {
-        let char =str.chaeAt(i);
-        if(char === char.toUpperCase()) {
+    for (let i = 0; i < str.length; i++) {
+        let char = str.charAt(i);
+        if (char === char.toUpperCase()) {
             swapped += char.toLowerCase();
-        }
-        else {
+        } else {
             swapped += char.toUpperCase();
         }
     }
     return swapped;
-
 }
+
+console.log(swapCase('The Quick Brown Fox')); 
+
+
+// ===============================
 // Exercise 4 : Omnipresent value
+// ===============================
 function isOmnipresent(arr, val) {
-    for(let subArr of arr) {
-        if(!subArr.includes(val)) {
+    for (let subArr of arr) {
+        if (!subArr.includes(val)) {
             return false;
         }
-        else {
-            return true;
-        }
     }
+    return true;
 }
-// Exercise 5 : Red table
-let table = document.body.firstElementChild;
-for(let i = 0; i < table.rows.length; i++) {
-    let row=table.row[i];
-    let diagonalCell = row.cells[i]; 
-    diagonalCell.style.backgroundColor = "red";
 
+// ===============================
+// Exercise 5 : Red table
+// ===============================
+let table = document.body.firstElementChild;
+for (let i = 0; i < table.rows.length; i++) {
+    let row = table.rows[i];
+    let diagonalCell = row.cells[i];
+    diagonalCell.style.backgroundColor = "red";
 }
